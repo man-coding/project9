@@ -5,23 +5,24 @@ public class Quiz01 {
 	public static void main(String[] args) {
 
 		Avante avante = new Avante();
-		avante.start();
 		avante.drive();
 		avante.stop();
 		avante.turnOff();
 		System.out.println();
 
-		Sonata sonata = new Sonata();
+		Sonata sonata = new Sonata(); // 부모타입으로 형변환해도 4개타입 모두 사용가능.(자식의 다른 기능을 쓰려면 형변환하면 안됨)
 		sonata.start();
 		sonata.drive();
 		sonata.stop();
 		sonata.turnOff();
+
 	}
 
 }
 
 abstract class Car {
 
+	// 추상메소드 선언
 	public abstract void start();
 
 	public abstract void drive();
@@ -32,6 +33,7 @@ abstract class Car {
 
 }
 
+//아반떼 클래스
 class Avante extends Car {
 
 	public void start() {
@@ -52,6 +54,7 @@ class Avante extends Car {
 
 }
 
+//소나타 클래스
 class Sonata extends Car {
 
 	public void start() {
@@ -68,5 +71,9 @@ class Sonata extends Car {
 
 	public void turnOff() {
 		System.out.println("소나타 시동을 끕니다.");
+	}
+
+	public void showInfo() {
+		System.out.println("소나타");
 	}
 }
